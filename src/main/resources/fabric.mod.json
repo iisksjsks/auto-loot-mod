@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "autoloot",
+  "version": "1.0.0",
+  "name": "Auto Loot",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.yourname.autoloot.AutoLootClient"]
+  },
+  "mixins": ["autoloot.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.8"
+  }
+}
