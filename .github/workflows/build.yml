@@ -15,11 +15,12 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Fix wrapper and build
+      - name: Install Gradle 8.11
         run: |
-          sed -i 's/gradle-8.8-bin/gradle-8.11-bin/g' gradle/wrapper/gradle-wrapper.properties
-          cat gradle/wrapper/gradle-wrapper.properties
-          bash gradlew build
+          wget -q https://services.gradle.org/distributions/gradle-8.11-bin.zip
+          unzip -q gradle-8.11-bin.zip
+          export PATH=$PWD/gradle-8.11/bin:$PATH
+          gradle build
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
